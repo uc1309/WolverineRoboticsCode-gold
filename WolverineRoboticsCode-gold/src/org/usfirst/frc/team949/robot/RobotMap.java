@@ -24,7 +24,7 @@ public class RobotMap {
     public static Talon backRightMotor = new Talon(RobotMap.backRight);
     public static Talon backLeftMotor = new Talon(RobotMap.backLeft); 
     
-    public static Gyro gyro = new Gyro(RobotMap.gyro);
+    public static Gyro driveGyro = new Gyro(RobotMap.gyro);
     
     public static RobotDrive drive = new RobotDrive(frontLeftMotor, backLeftMotor, frontRightMotor, frontLeftMotor);	
     

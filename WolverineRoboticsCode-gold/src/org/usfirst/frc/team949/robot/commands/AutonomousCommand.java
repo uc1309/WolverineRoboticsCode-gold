@@ -6,7 +6,8 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team949.robot.Robot;
 
 /**
- *
+ * Placeholder until Autonomous Commands have been written. This will be replaced by a
+ * command group.
  */
 public class AutonomousCommand extends Command {
 

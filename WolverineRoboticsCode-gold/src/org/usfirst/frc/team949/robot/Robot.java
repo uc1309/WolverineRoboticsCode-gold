@@ -17,7 +17,7 @@ import org.usfirst.frc.team949.robot.subsystems.*;
  */
 public class Robot extends IterativeRobot {
 
-	public static ExampleSubsystem exampleSubsystem; 
+	public static Camera camera; 
 	public static DriveTrain driveTrain;
 	public static OI oi;
 
@@ -32,6 +32,7 @@ public class Robot extends IterativeRobot {
         // instantiate the command used for the autonomous period
         autonomousCommand = new AutonomousCommand();
         driveTrain = new DriveTrain();
+        camera = new Camera();
     }
 	
 	public void disabledPeriodic() {
