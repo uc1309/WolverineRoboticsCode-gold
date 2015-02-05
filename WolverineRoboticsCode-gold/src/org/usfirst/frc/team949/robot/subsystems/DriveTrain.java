@@ -1,11 +1,13 @@
 package org.usfirst.frc.team949.robot.subsystems;
 
-import org.usfirst.frc.team949.robot.RobotMap;
+//import org.usfirst.frc.team949.robot.RobotMap;
 import org.usfirst.frc.team949.robot.commands.JoystickDrive;
 
+import static org.usfirst.frc.team949.robot.RobotMap.*;
 //import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
+import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
@@ -13,9 +15,15 @@ import edu.wpi.first.wpilibj.command.Subsystem;
  */
 public class DriveTrain extends Subsystem {
 	
-	private RobotDrive drive = RobotMap.drive;
+	RobotDrive drive;
 	//private Gyro gyro = RobotMap.driveGyro;
 
+	public DriveTrain() {
+		drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
+		drive.setInvertedMotor(MotorType.kFrontLeft, true);
+		drive.setInvertedMotor(MotorType.kRearRight, true);
+	}
+	
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         setDefaultCommand(new JoystickDrive());
