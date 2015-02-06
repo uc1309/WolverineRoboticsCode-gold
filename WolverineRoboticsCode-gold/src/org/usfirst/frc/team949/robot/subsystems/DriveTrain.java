@@ -34,8 +34,12 @@ public class DriveTrain extends Subsystem {
     }
     
 	public void mechanumDrive(Joystick joy) {
-    	drive.mecanumDrive_Cartesian(joy.getX(), joy.getY(), joy.getZ(), joy.getTwist());
+    	drive.mecanumDrive_Cartesian(-joy.getZ() / 3, joy.getY() / 3, joy.getX() / 3, joy.getTwist());
     }
+	
+	public void mechanumFullDrive(Joystick joy) {
+		drive.mecanumDrive_Cartesian(-joy.getZ() / 2, 0.75 * joy.getY(), 0.75* joy.getX(), joy.getTwist());
+	}
     
     public void stop() {
     	drive.mecanumDrive_Cartesian(0, 0, 0, 0);
