@@ -13,6 +13,7 @@ import org.usfirst.frc.team949.robot.commands.ArmControl;
 public class Arm extends Subsystem {
 	
 	private Talon armMotor;
+	private int inversion = 1;
 	
 	public Arm() {
 		armMotor = new Talon(RobotMap.armMotor);
@@ -27,9 +28,11 @@ public class Arm extends Subsystem {
     }
     
     public void setSpeed(double speed) {
-    	armMotor.set(speed);
+    	armMotor.set(speed * inversion);
     }
     
-    
+    public void setInversion(int i) {
+    	inversion = i;
+    }
 }
 

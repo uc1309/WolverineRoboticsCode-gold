@@ -23,6 +23,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain driveTrain;
 	public static OI oi;
 	public static Camera camera;
+	public static Grab grab;
 	int session;
 
     Command autonomousCommand;
@@ -32,18 +33,13 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-
-        // the camera name (ex "cam0") can be found through the roborio web interface
-        session = NIVision.IMAQdxOpenCamera("cam0",
-                NIVision.IMAQdxCameraControlMode.CameraControlModeController);
-        NIVision.IMAQdxConfigureGrab(session);
-        
 		oi = new OI();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new RobotVision();
         driveTrain = new DriveTrain();
         arm = new Arm();
-        camera = new Camera();
+        grab = new Grab();
+//        camera = new Camera();
     } 
 	
 	public void disabledPeriodic() {
