@@ -4,8 +4,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
-import org.usfirst.frc.team949.robot.commands.*;
 import org.usfirst.frc.team949.robot.subsystems.*;
 
 import com.ni.vision.NIVision;
@@ -33,13 +31,19 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
+
+        // Initialize camera
+        session = NIVision.IMAQdxOpenCamera("cam0",
+                NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+        NIVision.IMAQdxConfigureGrab(session);
+        
 		oi = new OI();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new RobotVision();
         driveTrain = new DriveTrain();
         arm = new Arm();
         grab = new Grab();
-//        camera = new Camera();
+        camera = new Camera();
     } 
 	
 	public void disabledPeriodic() {
