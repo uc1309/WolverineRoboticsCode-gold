@@ -31,26 +31,19 @@ public class Robot extends IterativeRobot {
      * used for any initialization code.
      */
     public void robotInit() {
-<<<<<<< HEAD
 
         // Initialize camera
         session = NIVision.IMAQdxOpenCamera("cam0",
                 NIVision.IMAQdxCameraControlMode.CameraControlModeController);
         NIVision.IMAQdxConfigureGrab(session);
         
-=======
->>>>>>> origin/master
 		oi = new OI();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new RobotVision();
         driveTrain = new DriveTrain();
         arm = new Arm();
         grab = new Grab();
-<<<<<<< HEAD
         camera = new Camera();
-=======
-//        camera = new Camera();
->>>>>>> origin/master
     } 
 	
 	public void disabledPeriodic() {
