@@ -4,8 +4,6 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
-
-import org.usfirst.frc.team949.robot.commands.*;
 import org.usfirst.frc.team949.robot.subsystems.*;
 
 import com.ni.vision.NIVision;
@@ -23,6 +21,7 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain driveTrain;
 	public static OI oi;
 	public static Camera camera;
+	public static Grab grab;
 	int session;
 
     Command autonomousCommand;
@@ -33,7 +32,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 
-        // the camera name (ex "cam0") can be found through the roborio web interface
+        // Initialize camera
         session = NIVision.IMAQdxOpenCamera("cam0",
                 NIVision.IMAQdxCameraControlMode.CameraControlModeController);
         NIVision.IMAQdxConfigureGrab(session);
@@ -43,6 +42,7 @@ public class Robot extends IterativeRobot {
         //autonomousCommand = new RobotVision();
         driveTrain = new DriveTrain();
         arm = new Arm();
+        grab = new Grab();
         camera = new Camera();
     } 
 	

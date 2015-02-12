@@ -1,9 +1,5 @@
 package org.usfirst.frc.team949.robot;
 
-import edu.wpi.first.wpilibj.Gyro;
-import edu.wpi.first.wpilibj.Talon;
-import edu.wpi.first.wpilibj.RobotDrive;
-
 
 /**
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
@@ -18,8 +14,8 @@ public class RobotMap {
     public static final int frontLeft = 2;
     public static final int backRight = 3;
     public static final int backLeft = 0;
-    //public static final int gyro = 4;
     public static final int armMotor = 5;
+    public static final int grabMotor = 4;
     
     // If you are using multiple modules, make sure to define both the port
     // number and the module. For example you with a rangefinder:
