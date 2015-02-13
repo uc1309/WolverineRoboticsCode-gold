@@ -1,9 +1,12 @@
 package org.usfirst.frc.team949.robot.commands.groups;
 
+<<<<<<< HEAD
 import java.util.Date;
 
 import java.util.Date;
 
+=======
+>>>>>>> parent of ccfb079... Added some nice organization.
 import edu.wpi.first.wpilibj.command.CommandGroup;
 
 public class GotoTote extends CommandGroup {
@@ -19,6 +22,7 @@ public class GotoTote extends CommandGroup {
 //		addSequential(new PickUpTote());
 	}
 
+<<<<<<< HEAD
 		
 //
 //	long startTime = -1;
@@ -30,4 +34,6 @@ public class GotoTote extends CommandGroup {
 //	 boolean asdfisFinished() {
 //		return new Date().getTime() - startTime > gradTime && startTime == -1;
 //	}
+=======
+>>>>>>> parent of ccfb079... Added some nice organization.
 }

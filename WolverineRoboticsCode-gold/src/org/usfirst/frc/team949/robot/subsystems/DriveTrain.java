@@ -12,25 +12,29 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
 import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
 public class DriveTrain extends Subsystem {
-
+	
 	RobotDrive drive;
+<<<<<<< HEAD
 
 	Encoder encFrontLeft;
 	Encoder encFrontRight;
 	Encoder encBackRight;
 	Encoder encBackLeft;
 	// private Gyro gyro = RobotMap.driveGyro;
+=======
+	//private Gyro gyro = RobotMap.driveGyro;
+>>>>>>> parent of ccfb079... Added some nice organization.
 
 	public DriveTrain() {
 		drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
 		drive.setInvertedMotor(MotorType.kFrontLeft, true);
 		drive.setInvertedMotor(MotorType.kRearRight, true);
+<<<<<<< HEAD
 
 		encFrontLeft = new Encoder(0, 1, true, Encoder.EncodingType.k4X);
 		encFrontRight = new Encoder(2, 3, false, Encoder.EncodingType.k4X);
@@ -44,6 +48,8 @@ public class DriveTrain extends Subsystem {
 		SmartDashboard.putNumber("ROTATE FULL NERF", (float) 0.5);
 		SmartDashboard.putNumber("FORWARD FULL NERF", (float) 1);
 		SmartDashboard.putNumber("SHIFT FULL NERF", (float) 0.5);
+=======
+>>>>>>> parent of ccfb079... Added some nice organization.
 	}
 	
     public void initDefaultCommand() {
@@ -63,6 +69,7 @@ public class DriveTrain extends Subsystem {
 		drive.mecanumDrive_Cartesian(-joy.getZ() / 2, 0.75 * joy.getY(), 0.75* joy.getX(), joy.getTwist());
 	}
     
+<<<<<<< HEAD
     public void correctMotor(Joystick joy) {
     	double rateFrontLeft = Math.abs(encFrontLeft.getRate());
     	double rateFrontRight = Math.abs(encFrontRight.getRate());
@@ -107,7 +114,10 @@ public class DriveTrain extends Subsystem {
     	}
     }
     
+=======
+>>>>>>> parent of ccfb079... Added some nice organization.
     public void stop() {
     	drive.mecanumDrive_Cartesian(0, 0, 0, 0);
     }
 }
+
