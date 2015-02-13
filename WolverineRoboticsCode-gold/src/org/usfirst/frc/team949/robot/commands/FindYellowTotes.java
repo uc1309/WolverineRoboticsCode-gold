@@ -220,7 +220,7 @@ public class FindYellowTotes extends CommandBase {
 
 	// Called once after isFinished returns true
 	protected void end() {
-		camera.numCommands--;
+//		camera.numCommands--;
 	}
 
 	// Called when another command which requires one or more of the same

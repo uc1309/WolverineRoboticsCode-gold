@@ -43,7 +43,7 @@ public class Camera extends Subsystem {
 	};
 
 	//Images
-	Image frame;
+	public Image frame;
 	Image binaryFrame;
 	int imaqError;
 
