@@ -1,8 +1,8 @@
-@@ -1,157 +0,0 @@
 package org.usfirst.frc.team949.robot.subsystems;
 
 import java.util.Comparator;
 
+import org.usfirst.frc.team949.robot.commands.FindYellowTotes;
 import org.usfirst.frc.team949.robot.commands.IsYellowTote;
 
 import com.ni.vision.NIVision;
@@ -84,7 +84,7 @@ public class Camera extends Subsystem {
 
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
-        setDefaultCommand(new IsYellowTote());
+        setDefaultCommand(new FindYellowTotes());
     }
     
 	//Comparator function for sorting particles. Returns true if particle 1 is larger

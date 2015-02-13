@@ -4,8 +4,11 @@ import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.command.Scheduler;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
+
+import org.usfirst.frc.team949.robot.commands.FindYellowTotes;
 import org.usfirst.frc.team949.robot.commands.IsYellowTote;
 import org.usfirst.frc.team949.robot.subsystems.*;
+
 import com.ni.vision.NIVision;
 
 /**
@@ -36,13 +39,13 @@ public class Robot extends IterativeRobot {
                 NIVision.IMAQdxCameraControlMode.CameraControlModeController);
         NIVision.IMAQdxConfigureGrab(session);
         
-		oi = new OI();
-        // instantiate the command used for the autonomous period
-        autonomousCommand = new IsYellowTote();
+        oi = new OI();
+        camera = new Camera();
         driveTrain = new DriveTrain();
         arm = new Arm();
         grab = new Grab();
-        camera = new Camera();
+        // instantiate the command used for the autonomous period
+        autonomousCommand = new FindYellowTotes();
     } 
 	
 	public void disabledPeriodic() {
