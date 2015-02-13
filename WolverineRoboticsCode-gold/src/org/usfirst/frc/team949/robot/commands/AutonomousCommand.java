@@ -22,11 +22,8 @@ public class AutonomousCommand extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-<<<<<<< HEAD
     	Robot.driveTrain.driveForward();
-=======
-//    	Robot.driveTrain.driveForward();
->>>>>>> parent of 068b5c5... Changed one variable for Camera
+
     }
 
     // Make this return true when this Command no longer needs to run execute()

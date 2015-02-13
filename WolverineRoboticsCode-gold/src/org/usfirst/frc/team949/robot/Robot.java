@@ -23,36 +23,28 @@ public class Robot extends IterativeRobot {
 	public static DriveTrain driveTrain;
 	public static OI oi;
 	public static Camera camera;
+	
 	int session;
 
     Command autonomousCommand;
+//	private static Grab grab;
 
     /**
      * This function is run when the robot is first started up and should be
      * used for any initialization code.
      */
     public void robotInit() {
-<<<<<<< HEAD
-
         session = NIVision.IMAQdxOpenCamera("cam0",
                 NIVision.IMAQdxCameraControlMode.CameraControlModeController);
         NIVision.IMAQdxConfigureGrab(session);
-        
-=======
->>>>>>> parent of 068b5c5... Changed one variable for Camera
+
 		oi = new OI();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new RobotVision();
         driveTrain = new DriveTrain();
         arm = new Arm();
-<<<<<<< HEAD
-//        grab = new Grab();
-
         camera = new Camera();
-=======
-        grab = new Grab();
-//        camera = new Camera();
->>>>>>> parent of 068b5c5... Changed one variable for Camera
+//        grab = new Grab();
     } 
 	
 	public void disabledPeriodic() {
@@ -79,7 +71,7 @@ public class Robot extends IterativeRobot {
         if (autonomousCommand != null) autonomousCommand.cancel();
     }
 
-    /**
+    /**4
      * This function is called when the disabled button is hit.
      * You can use it to reset subsystems before shutting down.
      */
