@@ -31,15 +31,6 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-        // Initialize camera
-=======
-        // the camera name (ex "cam0") can be found through the roborio web interface
->>>>>>> parent of ccfb079... Added some nice organization.
-=======
-        // the camera name (ex "cam0") can be found through the roborio web interface
->>>>>>> parent of ccfb079... Added some nice organization.
         session = NIVision.IMAQdxOpenCamera("cam0",
                 NIVision.IMAQdxCameraControlMode.CameraControlModeController);
         NIVision.IMAQdxConfigureGrab(session);
@@ -49,13 +40,8 @@ public class Robot extends IterativeRobot {
         //autonomousCommand = new RobotVision();
         driveTrain = new DriveTrain();
         arm = new Arm();
-<<<<<<< HEAD
-<<<<<<< HEAD
-        grab = new Grab();
-=======
->>>>>>> parent of ccfb079... Added some nice organization.
-=======
->>>>>>> parent of ccfb079... Added some nice organization.
+//        grab = new Grab();
+
         camera = new Camera();
     } 
 	

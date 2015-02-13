@@ -43,15 +43,7 @@ public class Camera extends Subsystem {
 	};
 
 	//Images
-<<<<<<< HEAD
-<<<<<<< HEAD
 	public Image frame;
-=======
-	Image frame;
->>>>>>> parent of ccfb079... Added some nice organization.
-=======
-	Image frame;
->>>>>>> parent of ccfb079... Added some nice organization.
 	Image binaryFrame;
 	int imaqError;
 
