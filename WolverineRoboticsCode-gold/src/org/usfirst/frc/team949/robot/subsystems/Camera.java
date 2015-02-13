@@ -1,17 +1,16 @@
 package org.usfirst.frc.team949.robot.subsystems;
 
-import java.util.Comparator;
+import org.usfirst.frc.team949.robot.commands.CameraUpdate;
 
 import com.ni.vision.NIVision;
 import com.ni.vision.NIVision.Image;
-import com.ni.vision.NIVision.ImageType;
 
 import edu.wpi.first.wpilibj.command.Subsystem;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
  *
  */
+<<<<<<< HEAD
 public class Camera extends Subsystem {
 	
 	public class ParticleReport implements Comparator<ParticleReport>, Comparable<ParticleReport>{
@@ -98,57 +97,20 @@ public class Camera extends Subsystem {
 	{
 		return (Math.max(0, Math.min(100*(1-Math.abs(1-ratio)), 100)));
 	}
+=======
+>>>>>>> parent of 068b5c5... Changed one variable for Camera
 
-	/**
-	 * Method to score convex hull area. This scores how "complete" the particle is. Particles with large holes will score worse than a filled in shape
-	 */
-	public double ConvexHullAreaScore(ParticleReport report)
-	{
-		return ratioToScore((report.Area/report.ConvexHullArea)*1.18);
-	}
+public class Camera extends Subsystem {
 
-	/**
-	 * Method to score if the particle appears to be a trapezoid. Compares the convex hull (filled in) area to the area of the bounding box.
-	 * The expectation is that the convex hull area is about 95.4% of the bounding box area for an ideal tote.
-	 */
-	public double TrapezoidScore(ParticleReport report)
-	{
-		return ratioToScore(report.ConvexHullArea/((report.BoundingRectRight-report.BoundingRectLeft)*(report.BoundingRectBottom-report.BoundingRectTop)*.954));
-	}
+	public int session = NIVision.IMAQdxOpenCamera("cam0",
+			NIVision.IMAQdxCameraControlMode.CameraControlModeController);
+	public Image frame = NIVision.imaqCreateImage(NIVision.ImageType.IMAGE_RGB, 0);
 
-	/**
-	 * Method to score if the aspect ratio of the particle appears to match the long side of a tote.
-	 */
-	public double LongSideScore(ParticleReport report)
-	{
-		return ratioToScore(((report.BoundingRectRight-report.BoundingRectLeft)/(report.BoundingRectBottom-report.BoundingRectTop))/LONG_RATIO);
-	}
+	public int numCommands = 0;
 
-	/**
-	 * Method to score if the aspect ratio of the particle appears to match the short side of a tote.
-	 */
-	public double ShortSideScore(ParticleReport report){
-		return ratioToScore(((report.BoundingRectRight-report.BoundingRectLeft)/(report.BoundingRectBottom-report.BoundingRectTop))/SHORT_RATIO);
-	}
-
-	/**
-	 * Computes the estimated distance to a target using the width of the particle in the image. For more information and graphics
-	 * showing the math behind this approach see the Vision Processing section of the ScreenStepsLive documentation.
-	 *
-	 * @param image The image to use for measuring the particle estimated rectangle
-	 * @param report The Particle Analysis Report for the particle
-	 * @param isLong Boolean indicating if the target is believed to be the long side of a tote
-	 * @return The estimated distance to the target in feet.
-	 */
-	public double computeDistance (Image image, ParticleReport report, boolean isLong) {
-		double normalizedWidth, targetWidth;
-		NIVision.GetImageSizeResult size;
-
-		size = NIVision.imaqGetImageSize(image);
-		normalizedWidth = 2*(report.BoundingRectRight - report.BoundingRectLeft)/size.width;
-		targetWidth = isLong ? 26.0 : 16.9;
-
-		return  targetWidth/(normalizedWidth*12*Math.tan(VIEW_ANGLE*Math.PI/(180*2)));
+	@Override
+	protected void initDefaultCommand() {
+//		NIVision.imaqSetImageSize(frame, width, height);
+		setDefaultCommand(new CameraUpdate());
 	}
 }
-
