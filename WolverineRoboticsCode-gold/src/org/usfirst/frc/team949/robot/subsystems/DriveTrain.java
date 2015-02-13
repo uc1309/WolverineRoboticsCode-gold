@@ -19,10 +19,14 @@ public class DriveTrain extends Subsystem {
 	
 	RobotDrive drive;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	Encoder encFrontLeft;
 	Encoder encFrontRight;
 	Encoder encBackRight;
 	Encoder encBackLeft;
+=======
+	//private Gyro gyro = RobotMap.driveGyro;
+>>>>>>> parent of ccfb079... Added some nice organization.
 =======
 	//private Gyro gyro = RobotMap.driveGyro;
 >>>>>>> parent of ccfb079... Added some nice organization.
@@ -31,6 +35,7 @@ public class DriveTrain extends Subsystem {
 		drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
 		drive.setInvertedMotor(MotorType.kFrontLeft, true);
 		drive.setInvertedMotor(MotorType.kRearRight, true);
+<<<<<<< HEAD
 <<<<<<< HEAD
 		encFrontLeft = new Encoder(0, 1, true, Encoder.EncodingType.k4X);
 		encFrontRight = new Encoder(2, 3, false, Encoder.EncodingType.k4X);
@@ -54,6 +59,8 @@ public class DriveTrain extends Subsystem {
 		drive.mecanumDrive_Polar(5, 0, 0);
 =======
 >>>>>>> parent of ccfb079... Added some nice organization.
+=======
+>>>>>>> parent of ccfb079... Added some nice organization.
 	}
 	
     public void initDefaultCommand() {
@@ -73,6 +80,7 @@ public class DriveTrain extends Subsystem {
 		drive.mecanumDrive_Cartesian(-joy.getZ() / 2, 0.75 * joy.getY(), 0.75* joy.getX(), joy.getTwist());
 	}
     
+<<<<<<< HEAD
 <<<<<<< HEAD
     public void correctMotor(Joystick joy) {
     	double rateFrontLeft = Math.abs(encFrontLeft.getRate());
@@ -115,6 +123,10 @@ public class DriveTrain extends Subsystem {
     		backRight.set(-highest * joy.getY());
     		SmartDashboard.putString("Encoder correction", "on");
     	}
+=======
+    public void stop() {
+    	drive.mecanumDrive_Cartesian(0, 0, 0, 0);
+>>>>>>> parent of ccfb079... Added some nice organization.
 =======
     public void stop() {
     	drive.mecanumDrive_Cartesian(0, 0, 0, 0);
