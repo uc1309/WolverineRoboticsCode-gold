@@ -1,24 +1,26 @@
 package org.usfirst.frc.team949.robot.subsystems;
 
 //import org.usfirst.frc.team949.robot.RobotMap;
-import org.usfirst.frc.team949.robot.RobotMap;
 import org.usfirst.frc.team949.robot.commands.JoystickDrive;
 
 import static org.usfirst.frc.team949.robot.RobotMap.*;
+<<<<<<< HEAD
 import edu.wpi.first.wpilibj.Encoder;
+=======
+>>>>>>> parent of 068b5c5... Changed one variable for Camera
 //import edu.wpi.first.wpilibj.Gyro;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.RobotDrive.MotorType;
-import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 
 /**
  *
  */
 public class DriveTrain extends Subsystem {
-	
+
 	RobotDrive drive;
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 	Encoder encFrontLeft;
@@ -29,11 +31,16 @@ public class DriveTrain extends Subsystem {
 =======
 	//private Gyro gyro = RobotMap.driveGyro;
 >>>>>>> parent of ccfb079... Added some nice organization.
+=======
+
+	// private Gyro gyro = RobotMap.driveGyro;
+>>>>>>> parent of 068b5c5... Changed one variable for Camera
 
 	public DriveTrain() {
 		drive = new RobotDrive(frontLeft, backLeft, frontRight, backRight);
 		drive.setInvertedMotor(MotorType.kFrontLeft, true);
 		drive.setInvertedMotor(MotorType.kRearRight, true);
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 		encFrontLeft = new Encoder(0, 1, true, Encoder.EncodingType.k4X);
@@ -41,6 +48,8 @@ public class DriveTrain extends Subsystem {
 		encBackRight = new Encoder(4, 5, true, Encoder.EncodingType.k4X);
 		encBackLeft = new Encoder(6, 7, false, Encoder.EncodingType.k4X);		
 
+=======
+>>>>>>> parent of 068b5c5... Changed one variable for Camera
 		SmartDashboard.putNumber("ROTATE CONTROL NERF", (float) 1 / 3);
 		SmartDashboard.putNumber("FORWARD CONTROL NERF", (float) 1 / 3);
 		SmartDashboard.putNumber("SHIFT CONTROL NERF", (float) 1 / 3);
@@ -68,6 +77,7 @@ public class DriveTrain extends Subsystem {
 	public void mechanumFullDrive(Joystick joy) {
 		drive.mecanumDrive_Cartesian(-joy.getZ() / 2, 0.75 * joy.getY(), 0.75* joy.getX(), joy.getTwist());
 	}
+<<<<<<< HEAD
     
 <<<<<<< HEAD
     public void correctMotor(Joystick joy) {
@@ -119,5 +129,6 @@ public class DriveTrain extends Subsystem {
     public void stop() {
     	drive.mecanumDrive_Cartesian(0, 0, 0, 0);
     }
+=======
+>>>>>>> parent of 068b5c5... Changed one variable for Camera
 }
-

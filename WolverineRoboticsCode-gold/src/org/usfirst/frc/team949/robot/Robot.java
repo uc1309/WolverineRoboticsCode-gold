@@ -38,6 +38,7 @@ public class Robot extends IterativeRobot {
      */
     public void robotInit() {
 <<<<<<< HEAD
+<<<<<<< HEAD
         session = NIVision.IMAQdxOpenCamera("cam0",
                 NIVision.IMAQdxCameraControlMode.CameraControlModeController);
         NIVision.IMAQdxConfigureGrab(session);
@@ -50,16 +51,23 @@ public class Robot extends IterativeRobot {
         NIVision.IMAQdxConfigureGrab(session);
         
 >>>>>>> parent of ccfb079... Added some nice organization.
+=======
+>>>>>>> parent of 068b5c5... Changed one variable for Camera
 		oi = new OI();
         // instantiate the command used for the autonomous period
         //autonomousCommand = new RobotVision();
         driveTrain = new DriveTrain();
         arm = new Arm();
+<<<<<<< HEAD
         camera = new Camera();
 <<<<<<< HEAD
 //        grab = new Grab();
 =======
 >>>>>>> parent of ccfb079... Added some nice organization.
+=======
+        grab = new Grab();
+//        camera = new Camera();
+>>>>>>> parent of 068b5c5... Changed one variable for Camera
     } 
 	
 	public void disabledPeriodic() {
